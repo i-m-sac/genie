@@ -13,6 +13,7 @@ const BookAppoinment = () => {
   const [chosenIndustry, setIndustry] = useState('');
   const [choosenService, setService] = useState('')
   const [choosenSchedule, setSchedule] = useState('')
+  const [booked, setBooking] = useState(false)
   const [step, setStep] = useState(0)
 
 
@@ -25,6 +26,13 @@ const BookAppoinment = () => {
       })
     }, 100)
     
+  }
+
+  const submitApptRequest = () => {
+    setIndustry('')
+    setService('')
+    setSchedule('')
+    setBooking(true)
   }
 
   const chooseIndustry = (industry) => {
@@ -43,24 +51,32 @@ const BookAppoinment = () => {
     handleScroll(1500)
   }
 
+  const bookingElement = <div>
+    <h3 className=' alert alert-success'>Thank you for scheduling with us. Always happy to serve you.</h3>
+  </div>
+
   return (
     <div className="container mt-4">
       <div className='row d-flex justify-content-center '>
-        <Select 
-            placeholder='What service are you looking for ?'
-            className=""
-            width="50%"
-            classNamePrefix="select"
-            isClearable={true}
-            isSearchable={true}
-            name="color"
-            options={industries}
-            onChange={(e) => { chooseIndustry(e) }}
-          />
+        {
+          !booked &&
+          <Select 
+              placeholder='What service are you looking for ?'
+              className=""
+              width="50%"
+              classNamePrefix="select"
+              isClearable={true}
+              isSearchable={true}
+              name="color"
+              options={industries}
+              onChange={(e) => { chooseIndustry(e) }}
+            />
+        }
       </div>
       {chosenIndustry && <Services service={chosenIndustry} chooseService={chooseService} />}
       { choosenService &&  <Schedule confirmSchedule={chooseSchedule} /> }
-      { choosenSchedule && <button className='mt-3 btn btn-primary'>Confirm your booking</button> }
+      { choosenSchedule && <button onClick={submitApptRequest} className='mt-3 btn btn-primary'>Confirm your appoinment</button> }
+      { booked && bookingElement}
 
     </div>
   )
