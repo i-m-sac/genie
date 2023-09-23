@@ -86,6 +86,7 @@ const Schedule = (props) => {
               onChange={(e) => { chooseGenie(e) }}
             />
       </div>
+      <br />
       
 
       {chosenGenie && <Scheduler

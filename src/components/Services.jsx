@@ -13,6 +13,16 @@ const services = {
   }, {
     imgLink: '',
     title: 'Whole Day'
+  }],
+  dental: [{
+    title: 'Cleaning'
+  }, {
+    title: 'Checkup'
+  }],
+  saloon: [{
+    title: 'Gents Haircut'
+  }, {
+    title: 'Hair and Beard'
   }]
 }
 
@@ -30,7 +40,7 @@ const Services = (props) => {
         <Card className={chosen === item.title ? 'border border-info' : ''} >
           {/* <Card.Img className='card-img-top' style={{ objectFit: 'cover', height: '18rem' }} src={plumber1} /> */}
           <Card.Body>
-            <Card.Title style={{ 'text-decoration': 'none !important' }}>{item.title}</Card.Title>
+            <Card.Text style={{ 'text-decoration': 'none !important' }}>{item.title}</Card.Text>
           </Card.Body>
         </Card>
       </a>
