@@ -59,7 +59,7 @@ const BookService = () => {
       </div>
       {chosenIndustry && <Services service={chosenIndustry} chooseService={chooseService} />}
       { choosenService &&  <Schedule confirmSchedule={chooseSchedule} /> }
-      { chooseSchedule && <button className='mt-3 btn btn-primary'>Confirm your booking</button> }
+      { choosenSchedule && <button className='mt-3 btn btn-primary'>Confirm your booking</button> }
 
     </div>
   )

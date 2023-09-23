@@ -1,10 +1,12 @@
 import user1 from '../assets/user_icon.png'
+import logo from '../assets/genie.png'
 
 import Image from 'react-bootstrap/Image';
 
 export const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light px-2">
+      <img src={logo} style={{ height: '30px'}} alt="genie" />
       <a className="navbar-brand" href="#">Genie</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

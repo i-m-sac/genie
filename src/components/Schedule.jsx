@@ -72,7 +72,7 @@ const Schedule = (props) => {
 
   const view = 'week'
   return (
-    <div className="mt-2 ">
+    <div className="my-2 ">
       <div className='row d-flex justify-content-center '>
         <Select 
               placeholder='Available Genies'
