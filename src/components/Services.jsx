@@ -41,7 +41,7 @@ const Services = (props) => {
   const cards = []
   items.forEach(item => {
     cards.push(
-      <a  className='col-3 m-0' onClick={() => { choose(item.title); chooseService(item.title)}}>
+      <a  className=' m-0' onClick={() => { choose(item.title); chooseService(item.title)}}>
         <Card className={chosen === item.title ? 'border border-info' : ''} >
           {/* <Card.Img className='card-img-top' style={{ objectFit: 'cover', height: '18rem' }} src={plumber1} /> */}
           <Card.Body>

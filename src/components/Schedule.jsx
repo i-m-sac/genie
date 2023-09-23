@@ -64,7 +64,6 @@ const Schedule = (props) => {
   }
 
   const chooseGenie = (e) => {
-    console.log('chosenGe', e)
     setGenie(e.value)
     events.pop()
     handleScroll(1800)
@@ -76,7 +75,7 @@ const Schedule = (props) => {
       <div className='row d-flex justify-content-center '>
         <Select 
               placeholder='Available Genies'
-              className="w-25 mt-3"
+              className=" mt-3"
               width="50%"
               classNamePrefix="select"
               isSearchable={true}
