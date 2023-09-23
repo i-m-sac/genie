@@ -23,6 +23,11 @@ const services = {
     title: 'Gents Haircut'
   }, {
     title: 'Hair and Beard'
+  }],
+  electrician: [{
+    title: 'Wiring repair'
+  }, {
+    title: 'Setup new wiring'
   }]
 }
 
