@@ -1,18 +1,45 @@
 import Select from 'react-select';
 import React, { useEffect, useState } from 'react';
 import Services from './Services'
+import Schedule from './Schedule'
 
-const options = [
+const industries = [
   { label: 'Plumber', value: 'plumbing' },
   { label: 'Electrician', value: 'electrician'}
 ]
 
 const BookService = () => {
-  const [chosenService, setService] = useState('');
+  const [chosenIndustry, setIndustry] = useState('');
+  const [choosenService, setService] = useState('')
+  const [choosenSchedule, setSchedule] = useState('')
+  const [step, setStep] = useState(0)
+
+
+  const handleScroll = (y = 200) => {
+    console.log('Handlee Scrolll', y)
+    setTimeout(()=> {
+      window.scrollTo({
+        top: y,
+        behavior: "smooth"
+      })
+    }, 100)
+    
+  }
+
+  const chooseIndustry = (industry) => {
+    setIndustry(industry)
+    setStep(1)
+  }
 
   const chooseService = (service) => {
-    console.log('service', service)
     setService(service)
+    handleScroll(1000)
+    setStep(2)
+  }
+
+  const chooseSchedule = (schedule) => {
+    setSchedule(schedule)
+    handleScroll(1500)
   }
 
   return (
@@ -26,12 +53,13 @@ const BookService = () => {
             isClearable={true}
             isSearchable={true}
             name="color"
-            options={options}
-            onChange={(e) => { chooseService(e) }}
+            options={industries}
+            onChange={(e) => { chooseIndustry(e) }}
           />
       </div>
-      {chosenService && <Services service={chosenService} />}
-
+      {chosenIndustry && <Services service={chosenIndustry} chooseService={chooseService} />}
+      { choosenService &&  <Schedule confirmSchedule={chooseSchedule} /> }
+      { chooseSchedule && <button className='mt-3 btn btn-primary'>Confirm your booking</button> }
 
     </div>
   )

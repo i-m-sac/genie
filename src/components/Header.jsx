@@ -1,3 +1,7 @@
+import user1 from '../assets/user_icon.png'
+
+import Image from 'react-bootstrap/Image';
+
 export const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light px-2">
@@ -16,8 +20,8 @@ export const Header = () => {
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <Image src={user1} roundedCircle className='img-thumbnail' style={{ height: '40px'}} />
+          <a className='text-primary ml-2 text-decoration-none' href=''>Alladin Doe</a>
         </form>
       </div>
     </nav>

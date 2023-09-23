@@ -1,6 +1,7 @@
 
 import Card from 'react-bootstrap/Card';
 import plumber1 from '../assets/plumber.png'
+import React, { useEffect, useState } from 'react';
 
 const services = {
   plumbing: [{
@@ -16,24 +17,27 @@ const services = {
 }
 
 const Services = (props) => {
-  console.log('Propsss', props.service)
+
+  const [chosen, choose] = useState('')
+
   if (!props.service) return null
-  const { service } = props
+  const { service, chooseService } = props
   const items = services[service.value]
   const cards = []
   items.forEach(item => {
     cards.push(
-      <Card >
-        <Card.Img className='card-img-top' src={plumber1} />
-        <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
-        </Card.Body>
-      </Card>
+      <a  className='col-3 m-0' onClick={() => { choose(item.title); chooseService(item.title)}}>
+        <Card className={chosen === item.title ? 'border border-info' : ''} >
+          {/* <Card.Img className='card-img-top' style={{ objectFit: 'cover', height: '18rem' }} src={plumber1} /> */}
+          <Card.Body>
+            <Card.Title style={{ 'text-decoration': 'none !important' }}>{item.title}</Card.Title>
+          </Card.Body>
+        </Card>
+      </a>
     )
   })
-  console.log('Carddd', cards)
   return (
-    <div className="mt-2 card-deck">
+    <div className="mt-3 card-deck justify-content-center">
       {cards}
     </div>
   )

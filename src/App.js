@@ -1,6 +1,7 @@
 import './App.css';
 import { Header } from './components/Header';
 import { Genie } from './components/Genie';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className='container-fluid'>
         <Header />
         <Genie />
+        <Footer />
       </div>
       
     </div>
