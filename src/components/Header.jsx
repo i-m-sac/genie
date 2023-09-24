@@ -1,24 +1,17 @@
 import user1 from '../assets/user_icon.png'
-import logo from '../assets/genie.png'
+import logo from '../assets/genie_logo.png'
 
 import Image from 'react-bootstrap/Image';
 
 export const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light px-2">
-      <img src={logo} style={{ height: '30px'}} alt="genie" />
-      <a className="navbar-brand" href="#">Genie</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
+      <img className='mr-3' src={logo} style={{ height: '80px'}} alt="genie" />
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">About Us</a>
+            {/* <h2>Genie</h2> */}
           </li>
         </ul>
         <form className="form-inline my-2 my-lg-0">
