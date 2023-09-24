@@ -6,28 +6,42 @@ import React, { useEffect, useState } from 'react';
 const services = {
   plumbing: [{
     imgLink: '',
-    title: 'Plumbing'
+    title: 'Water leaks'
   }, {
     imgLink: '',
-    title: 'Others'
+    title: 'Clogs'
   }, {
     imgLink: '',
-    title: 'Whole Day'
+    title: 'New installations'
+  }, {
+    title: 'Emergency'
   }],
   dental: [{
     title: 'Cleaning'
   }, {
     title: 'Checkup'
+  }, {
+    title: 'Emergency'
   }],
   saloon: [{
     title: 'Gents Haircut'
   }, {
     title: 'Hair and Beard'
+  }, {
+    title: 'Makeup'
+  }, {
+    title: 'Threading'
+  }, { 
+    title: 'Nails'
   }],
   electrician: [{
     title: 'Wiring repair'
   }, {
-    title: 'Setup new wiring'
+    title: 'Installation'
+  }, {
+    title: 'Audit'
+  }, {
+    title: 'Emergency'
   }]
 }
 
@@ -42,7 +56,7 @@ const Services = (props) => {
   items.forEach(item => {
     cards.push(
       <a  className=' m-0' onClick={() => { choose(item.title); chooseService(item.title)}}>
-        <Card className={chosen === item.title ? 'border border-info' : ''} >
+        <Card className={chosen === item.title ? 'border border-primary' : ''} >
           {/* <Card.Img className='card-img-top' style={{ objectFit: 'cover', height: '18rem' }} src={plumber1} /> */}
           <Card.Body>
             <Card.Text style={{ 'text-decoration': 'none !important' }}>{item.title}</Card.Text>

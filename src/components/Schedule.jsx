@@ -2,14 +2,14 @@ import { Scheduler } from "@aldabil/react-scheduler";
 import Select from 'react-select';
 import React, { useEffect, useState } from 'react';
 
-const events = [
+const events1 = [
   {
     event_id: 1,
     title: "BUSY",
     editable: false,
     draggable: false,
     start: new Date("2023/09/24 09:00"),
-    end: new Date("2023/09/24 10:00"),
+    end: new Date("2023/09/24 12:00"),
     color: 'grey',
     admin_id: 1
   },
@@ -19,14 +19,13 @@ const events = [
     editable: false,
     draggable: false,
     start: new Date("2023/09/24 13:00"),
-    end: new Date("2023/09/24 14:00"),
+    end: new Date("2023/09/24 16:00"),
     color: 'grey'
   },
   {
     event_id: 3,
     title: "BUSY",
-    start: new Date("2023/09/25 13:00"),
-    allDay: true,
+    start: new Date("2023/09/25 10:00"),
     end: new Date("2023/09/25 14:00"),
     editable: false,
     draggable: false,
@@ -47,7 +46,7 @@ const Schedule = (props) => {
   const eventCreated = async (e) => {
     console.log('EventCreated', e)
     e.event_id = Date.now()
-    events.push(e)
+    events1.push(e)
     props.confirmSchedule(e)
     return e
   }
@@ -65,14 +64,14 @@ const Schedule = (props) => {
 
   const chooseGenie = (e) => {
     setGenie(e.value)
-    events.pop()
+    events1.pop()
     handleScroll(1800)
   }
 
   const view = 'week'
   return (
     <div className="my-2 ">
-      <div className='row d-flex justify-content-center '>
+      {/* <div className='row d-flex justify-content-center '>
         <Select 
               placeholder='Available Genies'
               className=" mt-3"
@@ -84,14 +83,14 @@ const Schedule = (props) => {
               options={genies}
               onChange={(e) => { chooseGenie(e) }}
             />
-      </div>
+      </div> */}
       <br />
       
 
-      {chosenGenie && <Scheduler
+      { <Scheduler
         className="mt-2"
         view={view}
-        events={events}
+        events={events1}
         onConfirm={eventCreated}
         viewerTitleComponent={()=> { return 'Custom Event'}}
         fields={ [
