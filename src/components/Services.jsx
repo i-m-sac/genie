@@ -42,10 +42,31 @@ const services = {
     title: 'Audit'
   }, {
     title: 'Emergency'
+  }],
+  car_mechanic: [{
+    title: 'Puncture fixing'
+  }, {
+    title: 'Checkup'
+  }, {
+    title: 'Oil Change'
+  }],
+  bike_mechanic: [{
+    title: 'Puncture fixing'
+  }, {
+    title: 'Servicing'
+  }, {
+    title: 'Other'
+  }],
+  optician: [{
+    title: 'Checkup'
+  }, {
+    title: 'Driver\'s Eye test'
   }]
 }
 
 const Services = (props) => {
+
+  console.log('CHoseenasdas as', props.service)
 
   const [chosen, choose] = useState('')
 
@@ -66,8 +87,14 @@ const Services = (props) => {
     )
   })
   return (
-    <div className="mt-3 card-deck justify-content-center">
-      {cards}
+    <div className="mt-3 justify-content-center">
+      <div>
+        <h3 className=''>What service are you looking for ?</h3>
+      </div>
+      <br />
+      <div className='card-deck justify-content-center'>
+        {cards}
+      </div>
     </div>
   )
 }

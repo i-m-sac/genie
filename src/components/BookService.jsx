@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Services from './Services'
 import Schedule from './Schedule'
 import Address from './Address'
+import Industries from './Industries';
 
 const industries = [
   { label: 'Plumber', value: 'plumbing' },
@@ -19,7 +20,6 @@ const BookService = () => {
 
 
   const handleScroll = (y = 200) => {
-    console.log('Handlee Scrolll', y)
     setTimeout(()=> {
       window.scrollTo({
         top: y,
@@ -38,8 +38,10 @@ const BookService = () => {
   }
 
   const chooseIndustry = (industry) => {
+    console.log('SetIndusgtry', industry)
     setIndustry(industry)
     setStep(1)
+    console.log('ChosenIndyus', chosenIndustry)
   }
 
   const chooseService = (service) => {
@@ -57,9 +59,9 @@ const BookService = () => {
   </div>
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 justify-content-center">
       <div className='row d-flex justify-content-center '>
-        {
+        {/* {
           !booked &&
         <Select 
             placeholder='What service are you looking for ?'
@@ -72,8 +74,9 @@ const BookService = () => {
             options={industries}
             onChange={(e) => { chooseIndustry(e) }}
           />
-        }
+        } */}
       </div>
+      { !booked && <Industries chooseIndustry={chooseIndustry} /> }
       {chosenIndustry && <Services service={chosenIndustry} chooseService={chooseService} />}
       { choosenService &&  <Schedule confirmSchedule={chooseSchedule} /> }
       { choosenSchedule && <Address selectAddress={choosenAddress} /> }

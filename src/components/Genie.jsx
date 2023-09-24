@@ -9,18 +9,18 @@ export const Genie = () => {
 
   return (
     <div className='container'>
-      <h2>How can I help you today ?</h2>
+      <h1>How can I serve you today ?</h1>
       <div className='row justify-content-center mt-4'>
-        <Nav variant="tabs" activeKey={activeKey}>
+        {/* <Nav variant="tabs" activeKey={activeKey}>
           <Nav.Item>
             <Nav.Link eventKey="service" onClick={() => setActiveKey('service')} >Book a service</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="appoinment" onClick={() => setActiveKey('appoinment')}>Get an appoinment</Nav.Link>
           </Nav.Item>
-        </Nav>
+        </Nav> */}
       </div>
-      {activeKey === 'service' ?  <BookService/> : <BookAppoinment/>}
+      {  <BookService/> }
     </div>
   )
 
