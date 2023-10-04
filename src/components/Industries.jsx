@@ -4,11 +4,8 @@ import Card from 'react-bootstrap/Card';
 const industries = [
   { label: 'Plumber', value: 'plumbing' },
   { label: 'Electrician', value: 'electrician'},
-  { label: 'Dental', value: 'dental'},
-  { label: 'Saloon', value: 'saloon'},
-  { label: 'Car Mechanic', value: 'car_mechanic'},
-  { label: 'Bike Mechanic', value: 'bike_mechanic'},
-  { label: 'Optician', value: 'optician'}
+  { label: 'Mechanic', value: 'mechanic'},
+  { label: 'Housekeeper', value: 'housekeeper'}
 ]
 
 const Industries = (props) => { 

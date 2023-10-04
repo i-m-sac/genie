@@ -43,24 +43,30 @@ const services = {
   }, {
     title: 'Emergency'
   }],
-  car_mechanic: [{
-    title: 'Puncture fixing'
+  mechanic: [{
+    title: 'Car Servicing'
   }, {
-    title: 'Checkup'
+    title: 'Car Repair'
   }, {
-    title: 'Oil Change'
-  }],
-  bike_mechanic: [{
-    title: 'Puncture fixing'
+    title: 'Bike Servicing'
   }, {
-    title: 'Servicing'
+    title: 'Bike Repair'
   }, {
-    title: 'Other'
+    title: 'e-Bike Servicing'
+  }, {
+    title: 'e-Bike Repair'
   }],
   optician: [{
     title: 'Checkup'
   }, {
     title: 'Driver\'s Eye test'
+  }],
+  housekeeper: [{
+    title: 'Cleaning'
+  }, {
+    title: 'Gardening'
+  }, {
+    title: 'Ironing'
   }]
 }
 
